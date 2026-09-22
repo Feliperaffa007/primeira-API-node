@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="">
+
+    <h1>Cadastro de Usuário</h1>
+    <div class="container mt-4">
+        <form id="formCadastro">
+            <!--'form' é usado para agrupar compos que o usuário precisa preencher, o id = "formCadastro" é muito importante porque seu JavaScript pode encontrar esse formulário através dele.-->
+           
+            <div class="col-mb-6">
+                <label class="form-label">Nome *:</label><br>
+                <input type="text" class="form-control" id="nome" required><br><br>
+            </div>
+
+            <div class="col-mb-6">
+            <label class="form-label">Idade:</label><br>
+            <input type="number" class="form-control" id="idade"><br><br>
+            </div>
+
+            <div class="col-mb-6">
+            <label class="form-label">Sexo:</label><br>
+            <select id="sexo" class="form-select"> <!--'Select' cria uma lista de opções.-->
+                <option value="">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+            </select><br><br>
+            </div>
+
+            <div class="col-mb-6">
+            <label class="form-label">CPF *:</label><br>
+            <input type="text" class="form-control" id="cpf" required><br><br>
+            </div>
+
+             <div class="col-mb-6">
+            <label class="form-label">Moradia:</label><br>
+            <input type="text" class="form-control" id="moradia"><br><br>
+            </div>
+
+             <div class="col-mb-6">
+            <label class="form-label">Estado Civil:</label><br>
+            <input type="text" class="form-control" id="estado_civil"><br><br>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Enviar Cadastro</button>
+            <!-- 'type="submit"'Isso significa:
+        Esse botão serve para enviar o formulário.
+        Quando o usuário clicar, o formulário será submetido.
+        É justamente nesse momento que o JavaScript normalmente entra para pegar os dados e mandar para sua API.-->
+        </form>
+    </div>
+
+    <div id="resposta" style="margin-top: 20px;"></div>
+
+    <div class="table-responsive">
+        <h2>Usuários cadastrados</h2>
+
+        <table class="table table-striped table-hover table-borderless text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Moradia</th>
+                    <th scope="col">Estado Civil</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody id="usuarios"></tbody>
+        </table>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
